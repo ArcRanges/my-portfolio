@@ -1,0 +1,55 @@
+.runner-head {
+  left: 45px;
+  top: 9px;
+}
+
+.edge-runner{
+  /* opacity: 0; */
+  opacity: 1;
+  left: 5px;
+  top: 12px;
+  width: 40px;
+  height: 1px;
+  
+}
+
+.edge-runner-wrapper {
+  position: absolute;
+  animation: runEdges 4s infinite 0s ease-in;
+}
+
+@keyframes runEdges {
+  0% {
+    opacity: 1;
+    left: 2%;
+    top: 2%;
+  }
+  10% {
+    left: 98%;
+    top: 2%;
+  }
+  40% {
+    left: 98%;
+    top: 2%;
+    transform: rotate(90deg)
+  }
+  50% {
+    left: 98%;
+    top: 98%;
+    transform: rotate(90deg)
+  }
+  60% {
+    left: 2%;
+    top: 98%;
+    
+  }
+  90% {
+    left: 2%;
+    top: 98%;
+  }
+  100% {
+    left: 2%;
+    top: 2%;
+    opacity: 1;
+  }
+}
