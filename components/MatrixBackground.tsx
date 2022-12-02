@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useThemeContext } from "../hooks/ThemeContext";
 import { limeRGB, orangeRGB, skyBlueRGB } from "../utils/constants";
 
@@ -39,10 +39,6 @@ export default function MatrixBackground({
         drops[i] = 1;
       }
 
-      // if (hasPasswordSubmitted) {
-      //   setValidating(true);
-
-      // }
       interval = setInterval(() => {
         if (!canvas) return;
 
@@ -53,7 +49,7 @@ export default function MatrixBackground({
         ctx.fillStyle = fade ? "rgba(0, 0, 0, .05)" : "rgba(0, 0, 0, .1)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         for (let i = 0; i < drops.length; i++) {
-          var text = letters[Math.floor(Math.random() * letters.length)];
+          const text = letters[Math.floor(Math.random() * letters.length)];
           const alpha = fade ? 0.3 : 1;
           const fillStyle = themeColors[selectedThemeColor](alpha);
           ctx.fillStyle = fillStyle;
@@ -70,7 +66,7 @@ export default function MatrixBackground({
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [selectedThemeColor]);
 
   return (
     <canvas
