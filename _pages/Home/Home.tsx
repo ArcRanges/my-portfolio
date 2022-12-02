@@ -112,9 +112,9 @@ const Home: NextPage = () => {
 
           <Card className="mt-5">
             <Paragraph className="mb-2">
-              Hi. My name is Arc and I’m a Full Stack DeveloParagraphper. I come
-              from the island of the Philippines and migrated to Canada in 2011,
-              and I’ve fallen in love with this place ever since.
+              Hi. My name is Arc and I’m a Full Stack Developer. I come from the
+              island of the Philippines and migrated to Canada in 2011, and I’ve
+              fallen in love with this place ever since.
             </Paragraph>
 
             <Paragraph className="mb-2">
