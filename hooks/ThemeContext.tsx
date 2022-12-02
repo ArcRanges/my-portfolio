@@ -7,7 +7,7 @@ export const THEME_COLORS = {
 };
 
 export const initialThemeState = {
-  selectedThemeColor: THEME_COLORS.lime,
+  selectedThemeColor: THEME_COLORS.sky,
 };
 
 const ThemeContext = createContext({} as any);

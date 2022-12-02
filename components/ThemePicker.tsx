@@ -17,6 +17,7 @@ export default function ThemePicker() {
       type: themeActions.SET_THEME,
       payload: theme,
     });
+    toggle();
   };
 
   useEffect(() => {
@@ -32,10 +33,7 @@ export default function ThemePicker() {
   }, [toggled]);
 
   return (
-    <div
-      className="fixed bottom-0 z-30 -translate-x-1/2 left-1/2 theme-picker"
-      // style={{ right: initialPosition }}
-    >
+    <div className="fixed bottom-0 z-30 -translate-x-1/2 left-1/2 theme-picker">
       <Card className="!p-2">
         <div className="flex flex-col items-center justify-center">
           <Icon
