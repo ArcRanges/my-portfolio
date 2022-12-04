@@ -6,7 +6,7 @@ export default function Paragraph({ className = "", children, ...rest }: any) {
   const { selectedThemeColor } = themeState;
 
   return (
-    <p className={`text-${selectedThemeColor}-500 ${className}`} {...rest}>
+    <p className={`text-${selectedThemeColor}-400 ${className}`} {...rest}>
       {children}
     </p>
   );

@@ -5,7 +5,7 @@ export default function ListItem({ children, className = "", ...rest }: any) {
   const { themeState } = useThemeContext();
   const { selectedThemeColor } = themeState;
   return (
-    <li className={`text-${selectedThemeColor}-500 ${className}`} {...rest}>
+    <li className={`text-${selectedThemeColor}-400 ${className}`} {...rest}>
       {children}
     </li>
   );
