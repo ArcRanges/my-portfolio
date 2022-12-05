@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "../styles/background-effects.css";
 
 import type { AppProps } from "next/app";
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import AuthProvider, {
   authReducer,
   initialAuthState,
@@ -19,6 +19,16 @@ import ThemeProvider, {
 function MyApp({ Component, pageProps }: AppProps) {
   const [authState, setAuthState] = useReducer(authReducer, initialAuthState);
   const [theme, setTheme] = useReducer(themeReducer, initialThemeState);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const _authState = localStorage.getItem("auth");
+      setAuthState({
+        type: "SET_AUTHENTICATED",
+        payload: JSON.parse(_authState ?? "{}"),
+      });
+    }
+  }, []);
 
   return (
     <div className="relative">

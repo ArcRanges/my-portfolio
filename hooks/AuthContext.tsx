@@ -32,12 +32,14 @@ export const initialAuthState = {
 
 export const authReducer = (state: AuthState, action: any) => {
   switch (action.type) {
-    case "SET_AUTHENTICATED":
+    case "SET_AUTHENTICATED": {
+      localStorage.setItem("auth", JSON.stringify(action.payload));
       return {
         ...state,
         authenticated: action.payload.authenticated,
         username: action.payload.username ?? "",
       };
+    }
     default:
       return state;
   }
