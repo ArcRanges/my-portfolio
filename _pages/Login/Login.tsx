@@ -14,7 +14,6 @@ const tl = gsap.timeline();
 export default function Login() {
   const Router = useRouter();
   const { authState, setAuthState } = useAuthContext();
-  console.log("🚀 ~ file: Login.tsx ~ line 17 ~ Login ~ authState", authState);
   const { themeState } = useThemeContext();
   const { selectedThemeColor } = themeState;
 
