@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeContext } from "../hooks/ThemeContext";
+import { useThemeContext } from "hooks/ThemeContext";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;

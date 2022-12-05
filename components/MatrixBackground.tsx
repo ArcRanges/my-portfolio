@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useThemeContext } from "../hooks/ThemeContext";
-import { limeRGB, orangeRGB, skyBlueRGB } from "../utils/constants";
+import { useThemeContext } from "hooks/ThemeContext";
+import { limeRGB, orangeRGB, skyBlueRGB } from "utils/constants";
 
 const letters =
   "ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ";

@@ -2,12 +2,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import Card from "../../components/Card";
-import Heading from "../../components/Heading";
-import MatrixBackground from "../../components/MatrixBackground";
-import Paragraph from "../../components/Paragraph";
-import Span from "../../components/Span";
-import { useThemeContext } from "../../hooks/ThemeContext";
+import Card from "components/Card";
+import Heading from "components/Heading";
+import MatrixBackground from "components/MatrixBackground";
+import Paragraph from "components/Paragraph";
+import Span from "components/Span";
+import { useThemeContext } from "hooks/ThemeContext";
 import Resume from "./components/Resume/Resume";
 
 const Home: NextPage = () => {

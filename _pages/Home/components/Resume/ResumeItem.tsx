@@ -1,7 +1,7 @@
 import React from "react";
-import Heading from "../../../../components/Heading";
-import ListItem from "../../../../components/ListItem";
-import Paragraph from "../../../../components/Paragraph";
+import Heading from "components/Heading";
+import ListItem from "components/ListItem";
+import Paragraph from "components/Paragraph";
 
 interface ResumeItemProps {
   title: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeContext } from "../hooks/ThemeContext";
+import { useThemeContext } from "hooks/ThemeContext";
 
 export default function ListItem({ children, className = "", ...rest }: any) {
   const { themeState } = useThemeContext();

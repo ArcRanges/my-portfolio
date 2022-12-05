@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useThemeContext } from "../hooks/ThemeContext";
+import { useThemeContext } from "hooks/ThemeContext";
 import gsap from "gsap";
 
 export default function Button({

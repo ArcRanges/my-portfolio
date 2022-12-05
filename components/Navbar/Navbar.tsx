@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useAuthContext } from "../../hooks/AuthContext";
+import { useAuthContext } from "hooks/AuthContext";
 import dayjs from "dayjs";
 import Card from "../Card";
 import Heading from "../Heading";

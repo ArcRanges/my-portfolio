@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import Card from "./Card";
 import gsap from "gsap";
-import { themeActions, useThemeContext } from "../hooks/ThemeContext";
+import { themeActions, useThemeContext } from "hooks/ThemeContext";
 import Icon from "./Icon";
 
 const tl = gsap.timeline();

@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeContext } from "../hooks/ThemeContext";
+import { useThemeContext } from "hooks/ThemeContext";
 
 export default function Heading({ className, children, type, ...rest }: any) {
   const { themeState } = useThemeContext();

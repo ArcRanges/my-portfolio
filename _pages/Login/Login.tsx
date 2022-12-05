@@ -2,12 +2,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Button from "../../components/Button";
-import Heading from "../../components/Heading";
-import Input from "../../components/Input";
-import Spinner from "../../components/Spinner";
-import { useAuthContext } from "../../hooks/AuthContext";
-import { useThemeContext } from "../../hooks/ThemeContext";
+import Button from "components/Button";
+import Heading from "components/Heading";
+import Input from "components/Input";
+import Spinner from "components/Spinner";
+import { useAuthContext } from "hooks/AuthContext";
+import { useThemeContext } from "hooks/ThemeContext";
 
 const tl = gsap.timeline();
 

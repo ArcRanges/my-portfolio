@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeContext } from "../hooks/ThemeContext";
+import { useThemeContext } from "hooks/ThemeContext";
 
 export default function Paragraph({ className = "", children, ...rest }: any) {
   const { themeState } = useThemeContext();
