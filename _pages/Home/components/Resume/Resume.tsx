@@ -49,7 +49,7 @@ export default function Resume() {
       <Card className="mt-5">
         <ResumeItem
           title="Full Stack Django Web Developer"
-          subtitle="Count-Down Marketplace"
+          subtitle="Count-Down Marketplace (2018 - 2021)"
           description={[
             "Convert PSD design files to code in HTML5, CSS3, JavaScript, Jquery",
             "Integrate the front-end with the Python back-end using Ajax + REST API",
