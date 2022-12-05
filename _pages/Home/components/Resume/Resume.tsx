@@ -5,7 +5,7 @@ import ResumeItem from "./ResumeItem";
 export default function Resume() {
   return (
     <div>
-      <Card className="mt-3">
+      <Card className="mt-5">
         <ResumeItem
           title="Fullstack Developer"
           subtitle="Epic Safety Inc. (2022 - Present)"
@@ -26,7 +26,7 @@ export default function Resume() {
           ]}
         />
       </Card>
-      <Card className="mt-3">
+      <Card className="mt-5">
         <ResumeItem
           title="Frontend Developer"
           subtitle="Epic Safety Inc. (2021 - 2022)"
@@ -46,7 +46,7 @@ export default function Resume() {
           ]}
         />
       </Card>
-      <Card className="mt-3">
+      <Card className="mt-5">
         <ResumeItem
           title="Full Stack Django Web Developer"
           subtitle="Count-Down Marketplace"

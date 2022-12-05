@@ -20,7 +20,7 @@ export default function ResumeItem({
           {subtitle}
         </Heading>
       )}
-      <Heading type="h4" className="text-2xl ">
+      <Heading type="h3" className="text-2xl ">
         {title}
       </Heading>
       <div className="mt-3">

@@ -67,7 +67,7 @@ const Home: NextPage = () => {
   if (loading)
     return (
       <div className="relative flex flex-col items-center justify-center w-screen h-screen">
-        <Heading type="h4" className="mb-4 uppercase blink-animation">
+        <Heading type="h2" className="mb-4 uppercase blink-animation">
           Initializing ...
         </Heading>
         <div
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
           className="fixed z-10 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full top-1/2 left-1/2 overlay"
           style={{ height: 0, width: 0 }}
         />
-        <div className="py-10 section1">
+        <div className="pt-10 section1">
           <Heading
             type="h1"
             className="text-5xl font-bold text-white -translate-x-10 opacity-0 heading"
