@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
   if (loading)
     return (
-      <div className="relative flex flex-col items-center justify-center w-screen h-screen">
+      <div className="relative flex flex-col items-center justify-center w-screen h-screen overflow-y-hidden">
         <Heading type="h2" className="mb-4 uppercase blink-animation">
           Initializing ...
         </Heading>
