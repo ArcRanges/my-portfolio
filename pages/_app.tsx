@@ -3,7 +3,10 @@ import "../styles/background-effects.css";
 
 import type { AppProps } from "next/app";
 import { useReducer, useState } from "react";
-import AuthProvider from "../hooks/AuthContext";
+import AuthProvider, {
+  authReducer,
+  initialAuthState,
+} from "../hooks/AuthContext";
 import Login from "../_pages/Login";
 import BackgroundEffects from "../containers/BackgroundEffects";
 import Navbar from "../components/Navbar";
@@ -14,19 +17,16 @@ import ThemeProvider, {
 } from "../hooks/ThemeContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authState, setAuthState] = useReducer(authReducer, initialAuthState);
   const [theme, setTheme] = useReducer(themeReducer, initialThemeState);
 
   return (
     <div className="relative">
       <ThemeProvider themeState={theme} setThemeState={setTheme}>
-        <AuthProvider
-          authState={{ authenticated }}
-          setAuthenticated={setAuthenticated}
-        >
+        <AuthProvider authState={authState} setAuthState={setAuthState}>
           <Navbar />
           <BackgroundEffects />
-          {!authenticated ? <Login /> : <Component {...pageProps} />}
+          {!authState.authenticated ? <Login /> : <Component {...pageProps} />}
           <ThemePicker />
         </AuthProvider>
       </ThemeProvider>

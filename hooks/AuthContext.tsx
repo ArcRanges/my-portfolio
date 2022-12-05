@@ -11,11 +11,34 @@ export const useAuthContext = () => {
 export default function AuthProvider({
   children,
   authState,
-  setAuthenticated,
+  setAuthState,
 }: any) {
   return (
-    <AuthContext.Provider value={{ authState, setAuthenticated }}>
+    <AuthContext.Provider value={{ authState, setAuthState }}>
       {children}
     </AuthContext.Provider>
   );
 }
+
+interface AuthState {
+  authenticated: boolean;
+  username: string;
+}
+
+export const initialAuthState = {
+  authenticated: false,
+  username: "",
+};
+
+export const authReducer = (state: AuthState, action: any) => {
+  switch (action.type) {
+    case "SET_AUTHENTICATED":
+      return {
+        ...state,
+        authenticated: action.payload.authenticated,
+        username: action.payload.username ?? "",
+      };
+    default:
+      return state;
+  }
+};

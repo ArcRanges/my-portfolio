@@ -6,7 +6,7 @@ import Heading from "../Heading";
 import Span from "../Span";
 
 export default function Navbar() {
-  const { authState, setAuthenticated } = useAuthContext();
+  const { authState, setAuthState } = useAuthContext();
   const [sessionSeconds, setSessionSeconds] = useState(0);
   const [loggingOut, setLoggingOut] = useState(false);
 
@@ -29,7 +29,10 @@ export default function Navbar() {
   useEffect(() => {
     if (loggingOut) {
       setTimeout(() => {
-        setAuthenticated(false);
+        setAuthState({
+          type: "SET_AUTHENTICATED",
+          payload: false,
+        });
         setLoggingOut(false);
       }, 3000);
     }
@@ -48,7 +51,9 @@ export default function Navbar() {
               </Heading>
             </div>
             <div className="flex flex-row">
-              <Heading type="h4">User IP: 192.168.0.256</Heading>
+              <Heading type="h4" className="capitalize">
+                User:&nbsp;{authState.username}
+              </Heading>
               <Span>&nbsp;|&nbsp;</Span>
               <Heading
                 type="h4"
