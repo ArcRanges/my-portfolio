@@ -37,14 +37,6 @@ const Home: NextPage = () => {
   }, [loading]);
 
   useEffect(() => {
-    // spin the page loader icon
-    // gsap.to(".loader", {
-    //   rotate: "360",
-    //   repeat: -1,
-    //   ease: "linear",
-    //   duration: 1,
-    // });
-
     gsap.to(".loader-inner", {
       width: "100%",
       duration: 4,
