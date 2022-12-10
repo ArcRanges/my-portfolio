@@ -40,9 +40,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-p, span, li {
+/* p, span, li {
   font-family: 'Baumans', cursive;
-}
+} */
 
 .text-lime {
   color: #39ff14;
