@@ -78,7 +78,7 @@ const Home: NextPage = () => {
     );
 
   return (
-    <div className="relative py-10 overflow-x-hidden">
+    <div className="relative pb-16 overflow-x-hidden">
       <MatrixBackground
         fade
         className="!fixed !opacity-100 z-10 top-0 left-0"

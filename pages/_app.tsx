@@ -17,23 +17,24 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [authState, setAuthState] = useReducer(authReducer, initialAuthState);
   const [theme, setTheme] = useReducer(themeReducer, initialThemeState);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const _authState = localStorage.getItem("auth");
-      setAuthState({
-        type: "SET_AUTHENTICATED",
-        payload: JSON.parse(_authState ?? "{}"),
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const _authState = localStorage.getItem("auth");
+  //     setAuthState({
+  //       type: "SET_AUTHENTICATED",
+  //       payload: JSON.parse(_authState ?? "{}"),
+  //     });
+  //   }
+  // }, []);
 
   return (
     <div className="relative">
       <ThemeProvider themeState={theme} setThemeState={setTheme}>
         <AuthProvider authState={authState} setAuthState={setAuthState}>
-          <Navbar />
+          {/* <Navbar /> */}
           <BackgroundEffects />
-          {!authState.authenticated ? <Login /> : <Component {...pageProps} />}
+          {/* {!authState.authenticated ? <Login /> : <Component {...pageProps} />} */}
+          <Component {...pageProps} />
           <ThemePicker />
         </AuthProvider>
       </ThemeProvider>

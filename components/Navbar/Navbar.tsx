@@ -44,7 +44,10 @@ export default function Navbar() {
       setTimeout(() => {
         setAuthState({
           type: "SET_AUTHENTICATED",
-          payload: false,
+          payload: {
+            authenticated: false,
+            username: "",
+          },
         });
         setLoggingOut(false);
       }, 3000);
