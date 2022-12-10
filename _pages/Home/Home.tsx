@@ -12,9 +12,9 @@ import Resume from "./components/Resume/Resume";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(true);
-  const [loaderCount, setLoaderCount] = useState(5);
+  const [loaderCount, setLoaderCount] = useState(3);
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
   useEffect(() => {
     if (!loading) {
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     gsap.to(".loader-inner", {
       width: "100%",
-      duration: 4,
+      duration: 3,
       delay: 0.5,
       ease: "ease-out",
     });
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3000);
   }, []);
 
   if (loading)
@@ -63,11 +63,11 @@ const Home: NextPage = () => {
           Initializing ...
         </Heading>
         <div
-          className={`flex items-center justify-start px-1 bg-${selectedThemeColor}-800`}
+          className={`flex items-center justify-start px-1 bg-${themeColor}-800`}
           style={{ width: 250, height: 50 }}
         >
           <div
-            className={`text-center bg-${selectedThemeColor}-200 loader-inner`}
+            className={`text-center bg-${themeColor}-200 loader-inner`}
             style={{ width: 0, height: 40 }}
           ></div>
           {loaderCount > 0 && (
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
     );
 
   return (
-    <div className="relative pb-16 overflow-x-hidden">
+    <div className="relative pt-10 pb-16 overflow-x-hidden">
       <MatrixBackground
         fade
         className="!fixed !opacity-100 z-10 top-0 left-0"

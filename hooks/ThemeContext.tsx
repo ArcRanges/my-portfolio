@@ -7,7 +7,7 @@ export const THEME_COLORS = {
 };
 
 export const initialThemeState = {
-  selectedThemeColor: THEME_COLORS.sky,
+  themeColor: THEME_COLORS.sky,
 };
 
 const ThemeContext = createContext({} as any);
@@ -40,7 +40,7 @@ export const themeReducer = (state: any, action: any) => {
       const colour = action.payload;
       return {
         ...state,
-        selectedThemeColor: colour,
+        themeColor: colour,
         selectedThemeBgColor: colour,
       };
     }

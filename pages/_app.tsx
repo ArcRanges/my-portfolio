@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div className="relative">
       <ThemeProvider themeState={theme} setThemeState={setTheme}>
         <AuthProvider authState={authState} setAuthState={setAuthState}>
-          {/* <Navbar /> */}
+          <Navbar />
           <BackgroundEffects />
           {/* {!authState.authenticated ? <Login /> : <Component {...pageProps} />} */}
           <Component {...pageProps} />

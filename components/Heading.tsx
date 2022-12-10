@@ -3,8 +3,8 @@ import { useThemeContext } from "hooks/ThemeContext";
 
 export default function Heading({ className, children, type, ...rest }: any) {
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
-  const _className = `text-${selectedThemeColor}-400 ${className}`;
+  const { themeColor } = themeState;
+  const _className = `text-${themeColor}-400 ${className}`;
 
   if (type === "h1")
     return (

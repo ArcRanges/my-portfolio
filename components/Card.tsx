@@ -3,9 +3,9 @@ import { useThemeContext } from "hooks/ThemeContext";
 
 export default function Card({ className = "", children, ...rest }: any) {
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
-  const dynamicClass = `from-${selectedThemeColor}-800/30 border-${selectedThemeColor}-500`;
+  const dynamicClass = `from-${themeColor}-800/30 border-${themeColor}-500`;
 
   return (
     <div

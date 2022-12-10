@@ -15,7 +15,7 @@ export default function Login() {
   const Router = useRouter();
   const { authState, setAuthState } = useAuthContext();
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -180,7 +180,7 @@ export default function Login() {
         <div className="relative flex items-center w-full opacity-0 identity-wrapper">
           {validating && (
             <div className="absolute flex items-center justify-center right-6">
-              <Spinner className={`text-${selectedThemeColor}-500`} />
+              <Spinner className={`text-${themeColor}-500`} />
             </div>
           )}
           {!hasUserNameSubmitted ? (

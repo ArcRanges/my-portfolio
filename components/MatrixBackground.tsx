@@ -16,7 +16,7 @@ export default function MatrixBackground({
   className = "",
 }: any) {
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
   useEffect(() => {
     let interval: any;
@@ -51,7 +51,7 @@ export default function MatrixBackground({
         for (let i = 0; i < drops.length; i++) {
           const text = letters[Math.floor(Math.random() * letters.length)];
           const alpha = fade ? 0.3 : 1;
-          const fillStyle = themeColors[selectedThemeColor](alpha);
+          const fillStyle = themeColors[themeColor](alpha);
           ctx.fillStyle = fillStyle;
           ctx.font = "bold 12px Orbitron";
           ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -66,7 +66,7 @@ export default function MatrixBackground({
     return () => {
       clearInterval(interval);
     };
-  }, [selectedThemeColor]);
+  }, [themeColor]);
 
   return (
     <canvas

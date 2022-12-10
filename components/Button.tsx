@@ -9,9 +9,9 @@ export default function Button({
   ...restProps
 }: any) {
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
-  const dynamicClass = `text-${selectedThemeColor}-500 from-${selectedThemeColor}-800/50 via-${selectedThemeColor}-700/30 to-${selectedThemeColor}-800/50 border-${selectedThemeColor}-500`;
+  const dynamicClass = `text-${themeColor}-500 from-${themeColor}-800/50 via-${themeColor}-700/30 to-${themeColor}-800/50 border-${themeColor}-500`;
 
   const loadingClass = loading ? "opacity-50" : "";
 
