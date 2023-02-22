@@ -6,14 +6,12 @@ import Button from "components/Button";
 import Heading from "components/Heading";
 import Input from "components/Input";
 import Spinner from "components/Spinner";
-import { useAuthContext } from "hooks/AuthContext";
 import { useThemeContext } from "hooks/ThemeContext";
 
 const tl = gsap.timeline();
 
 export default function Login() {
   const Router = useRouter();
-  const { authState, setAuthState } = useAuthContext();
   const { themeState } = useThemeContext();
   const { themeColor } = themeState;
 
@@ -64,13 +62,13 @@ export default function Login() {
 
   useEffect(() => {
     if (hasUserNameSubmitted) {
-      setAuthState({
-        type: "SET_AUTHENTICATED",
-        payload: {
-          authenticated: false,
-          username,
-        },
-      });
+      // setAuthState({
+      //   type: "SET_AUTHENTICATED",
+      //   payload: {
+      //     authenticated: false,
+      //     username,
+      //   },
+      // });
       tl.add("start")
         .to(
           ".password-header",
@@ -119,19 +117,19 @@ export default function Login() {
   useEffect(() => {
     if (authorized) {
       setTimeout(() => {
-        setAuthState({
-          type: "SET_AUTHENTICATED",
-          payload: { authenticated: true, username },
-        });
+        // setAuthState({
+        //   type: "SET_AUTHENTICATED",
+        //   payload: { authenticated: true, username },
+        // });
       }, 2000);
     }
   }, [authorized]);
 
-  useEffect(() => {
-    if (authState.authenticated) {
-      Router.push("/");
-    }
-  });
+  // useEffect(() => {
+  //   if (authState.authenticated) {
+  //     Router.push("/");
+  //   }
+  // });
 
   return (
     <div

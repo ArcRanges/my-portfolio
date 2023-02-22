@@ -5,6 +5,11 @@ const nextConfig = {
   images: {
     domains: ["upload.wikimedia.org"],
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = nextConfig;

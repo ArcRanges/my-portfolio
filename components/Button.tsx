@@ -6,6 +6,7 @@ export default function Button({
   className = "",
   children,
   loading,
+  small = false,
   ...restProps
 }: any) {
   const { themeState } = useThemeContext();
@@ -28,7 +29,9 @@ export default function Button({
 
   return (
     <button
-      className={`relative py-3 px-5 bg-gradient-to-t border transition-opacity duration-200 hover:opacity-50 ${loadingClass} ${dynamicClass} ${className}`}
+      className={`relative bg-gradient-to-t border transition-opacity duration-200 hover:opacity-50 ${loadingClass} ${dynamicClass} ${className} ${
+        small ? "py-1 px-3" : "py-3 px-5 "
+      }`}
       {...restProps}
       disabled={loading}
     >
