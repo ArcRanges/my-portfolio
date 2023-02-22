@@ -12,7 +12,7 @@ export default function Origin() {
         className={`philippines-img image ${themeColor}`}
         src="/philippines.svg"
         alt="philippines icon"
-        layout="raw"
+        // layout="raw"
         width={200}
         height={200}
       />
