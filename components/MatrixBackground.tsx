@@ -19,9 +19,11 @@ export default function MatrixBackground({
 }: any) {
   const { themeState } = useThemeContext();
   const { themeColor } = themeState;
-  const { width } = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   const [windowSize, setWindowSize] = useState(width);
+  const [windowHeight, setWindowHeight] = useState(height);
   const debouncedResize = useDebounce(windowSize, 300);
+  const debouncedHeight = useDebounce(windowHeight, 300);
 
   useEffect(() => {
     let interval: any;
@@ -71,11 +73,15 @@ export default function MatrixBackground({
     return () => {
       clearInterval(interval);
     };
-  }, [themeColor, debouncedResize]);
+  }, [themeColor, debouncedResize, debouncedHeight]);
 
   useEffect(() => {
     setWindowSize(width);
   }, [width]);
+
+  useEffect(() => {
+    setWindowHeight(height);
+  }, [height]);
 
   return (
     <canvas
