@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useThemeContext } from "hooks/ThemeContext";
 import { limeRGB, orangeRGB, skyBlueRGB } from "utils/constants";
+import useDebounce from "hooks/useDebounce";
+import useWindowDimensions from "hooks/useWindowDimensions";
 
 const letters =
   "ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ";
@@ -17,6 +19,9 @@ export default function MatrixBackground({
 }: any) {
   const { themeState } = useThemeContext();
   const { themeColor } = themeState;
+  const { width } = useWindowDimensions();
+  const [windowSize, setWindowSize] = useState(width);
+  const debouncedResize = useDebounce(windowSize, 300);
 
   useEffect(() => {
     let interval: any;
@@ -66,7 +71,11 @@ export default function MatrixBackground({
     return () => {
       clearInterval(interval);
     };
-  }, [themeColor]);
+  }, [themeColor, debouncedResize]);
+
+  useEffect(() => {
+    setWindowSize(width);
+  }, [width]);
 
   return (
     <canvas
