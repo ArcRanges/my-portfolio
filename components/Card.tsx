@@ -11,8 +11,8 @@ export default function Card({
   const { themeColor } = themeState;
 
   const dynamicClass = borderColor
-    ? `from-${borderColor}-800/30 border-${borderColor}-500`
-    : `from-${themeColor}-800/30 border-${themeColor}-500`;
+    ? `from-${borderColor}-800/50 border-${borderColor}-500`
+    : `from-${themeColor}-800/50 border-${themeColor}-500`;
 
   return (
     <div
