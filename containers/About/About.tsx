@@ -16,7 +16,7 @@ export default function About() {
               <Card>
                 <TypingParagraph
                   className="mb-2 text-white"
-                  text="I'm a Full Stack Developer born in the Philippines and migrated to Canada. My passion for software development began with tinkering my robotic toys. I enjoy solving problems and learning new things through software development. Working with diverse clients and employers, I find satisfaction in completing projects, from websites to mobile apps."
+                  text="I'm a Full Stack Developer born in the Philippines and migrated to Canada years ago. My passion for software development began with tinkering my robotic toys. I enjoy solving problems and learning new things through software development. Working with diverse clients and employers, I find satisfaction in completing projects, from websites to mobile apps."
                 />
               </Card>
             </>
