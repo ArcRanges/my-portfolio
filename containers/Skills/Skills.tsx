@@ -67,7 +67,7 @@ export default function Skills() {
     <div ref={ref} className="text-center text-white md:w-1/2">
       <h1 className="mb-5 text-4xl md:text-6xl">Skills</h1>
       <div className="flex flex-wrap items-center justify-between">
-        <div className="m-3 text-center md:m-5 icon-card">
+        <div className="m-3 text-center opacity-0 md:m-5 icon-card">
           <Card className="relative flex flex-col items-center justify-center w-20 h-20 border">
             <div
               className={`background absolute bottom-0 left-0 right-0 h-0 bg-${themeColor}-400 opacity-30`}

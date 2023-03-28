@@ -38,6 +38,7 @@ for (const colorName in myColors) {
         colorSafeList.push(`via-${colorName}-${shade}/30`);
         colorSafeList.push(`to-${colorName}-${shade}/30`);
         colorSafeList.push(`border-${colorName}-${shade}`);
+        colorSafeList.push(`border-${colorName}-${shade}/50`);
         colorSafeList.push(`outline-${colorName}-${shade}`);
       }
     });

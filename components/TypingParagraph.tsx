@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 interface Props {
-  text: string;
+  text: string | string[];
   speed?: number;
   delay?: number;
   className?: string;
@@ -18,7 +18,8 @@ const TypingParagraph: React.FC<Props> = ({
   useEffect(() => {
     let timeoutId: NodeJS.Timeout | null = null;
     const typingDelay = speed + delay;
-    const words = text.split(" ");
+    const paragraph = Array.isArray(text) ? text.join("<br/><br/>") : text;
+    const words = paragraph.split(" ");
 
     const type = (index: number): void => {
       const currentWords = words.slice(0, index + 1);
@@ -43,7 +44,9 @@ const TypingParagraph: React.FC<Props> = ({
     };
   }, [text, speed, delay]);
 
-  return <p className={className}>{typedText}</p>;
+  return (
+    <p className={className} dangerouslySetInnerHTML={{ __html: typedText }} />
+  );
 };
 
 export default TypingParagraph;
