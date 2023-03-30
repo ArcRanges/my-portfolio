@@ -3,6 +3,7 @@ import Modal from "components/Modal";
 import TypingParagraph from "components/TypingParagraph";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import data from "./data.json";
@@ -72,9 +73,13 @@ export default function Projects() {
       >
         <div className="flex flex-col flex-1 pt-5">
           <div className="grid flex-1 gap-8 md:grid-cols-3">
-            <div className="w-full bg-gray-400 h-60"></div>
-            <div className="w-full bg-gray-400 h-60"></div>
-            <div className="w-full bg-gray-400 h-60"></div>
+            {selectedProject?.images?.map((img) => (
+              <div className="h-full image-container">
+                <a href={img.regular} target="_blank" rel="noopener">
+                  <Image src={img.thumbnail} layout="fill" className="image" />
+                </a>
+              </div>
+            ))}
           </div>
 
           <div className="flex-1 pt-5">
