@@ -15,7 +15,7 @@ export type ProjectItem = typeof data[0];
 
 export default function Projects() {
   const { ref, inView } = useInView({ threshold: 0.2 });
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
     null
   );
