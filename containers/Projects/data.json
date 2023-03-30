@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Aryo Cloud",
+    "content": "An IoT Cloud Platform that enables end-users to control their alarm security remotely built with React/React Native/Expo.",
+    "link": "https://epicsafety.com/",
+    "buttonText": "Visit Website",
+    "description": [
+      "As an IoT software solutions company in the security industry, Epic Safety provides a range of safety management tools for workplaces dealing with alarm panels, specifically DSC and Honeywell panels. As a software developer, I had the privilege of leading the ongoing development team for the Aryo Cloud platform.",
+      "Working alongside experienced developers, designers, and safety experts, I contributed to creating a robust and reliable system architecture for Epic Safety. We implemented responsive design and advanced security features to protect sensitive data and ensure that the platform met the highest standards of safety and efficiency.",
+      "Overall, I am proud to have led the development of Epic Safety's Aryo Cloud platform and to have contributed to creating a powerful safety management tool that helps numerous businesses improve their safety practices and protect their employees."
+    ],
+    "images": [
+      {
+        "thumbnail": "/assets/images/epic/login-1.png",
+        "regular": "/assets/images/epic/login.png"
+      },
+      {
+        "thumbnail": "/assets/images/epic/app-ios-1.png",
+        "regular": "/assets/images/epic/app-ios.png"
+      },
+      {
+        "thumbnail": "/assets/images/epic/app-android-1.png",
+        "regular": "/assets/images/epic/app-android.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Sweet Collective Co.",
+    "content": "An e-commerce platform for a Clay Jewerly artist built with NextJS and Contentful CMS. Password protected: SweetCollective2022",
+    "link": "https://sweetcollective.vercel.app",
+    "buttonText": "Visit Website",
+    "description": [
+      "Sweet Collective is a personal project that I developed using Next.js and TypeScript. The platform is an e-commerce website that offers handmade sweets and treats, and is built with Contentful CMS for the backend. Although the project is not fully launched yet, it is designed to provide an intuitive and enjoyable user experience.",
+      "The website's design is user-friendly, allowing customers to easily browse through the product catalog and make purchases. The use of Next.js and TypeScript ensures that the website is optimized for performance and reliability, providing a seamless shopping experience for users.",
+      "While there is currently no tracking and inventory management system in place, these features are on the roadmap for future development. The use of Contentful CMS for the backend provides flexibility and scalability, allowing for easy implementation of additional features and functionalities as the project evolves."
+    ],
+    "images": [
+      {
+        "thumbnail": "/assets/images/sweetcollective/home-1.png",
+        "regular": "/assets/images/sweetcollective/home.png"
+      },
+      {
+        "thumbnail": "/assets/images/sweetcollective/shop-1.png",
+        "regular": "/assets/images/sweetcollective/shop.png"
+      },
+      {
+        "thumbnail": "/assets/images/sweetcollective/about-1.png",
+        "regular": "/assets/images/sweetcollective/about.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "My Marketplace",
+    "content": "A simple marketplace mobile app built with React Native + Expo with Push Notifications and real-time chat feature using Firebase.",
+    "link": "https://github.com/ArcRanges/my-marketplace",
+    "buttonText": "View Code",
+    "description": [
+      "My Marketplace is a personal project that showcases the power of Firebase and real-time chat in the context of a buying and selling marketplace. As a software developer, I had the pleasure of creating this project to demonstrate my skills in these areas.",
+      "The project features a fully functional marketplace where users can buy and sell items in real-time. The platform includes a range of features such as product listings, shopping cart functionality, and payment processing. In addition, the platform allows users to communicate with each other through real-time chat, creating a seamless and engaging experience.",
+      "My Marketplace demonstrates the capabilities of Firebase as a powerful backend tool, allowing for real-time updates and seamless communication between users. The real-time chat feature showcases the power of Firebase's real-time database, enabling instant messaging between buyers and sellers."
+    ],
+    "images": [
+      {
+        "thumbnail": "/assets/images/marketplace/screen-1.png",
+        "regular": "/assets/images/marketplace/screen.png"
+      },
+      {
+        "thumbnail": "/assets/images/marketplace/chat.gif",
+        "regular": "/assets/images/marketplace/chat.gif"
+      },
+      {
+        "thumbnail": "/assets/images/marketplace/demo.gif",
+        "regular": "/assets/images/marketplace/demo.gif"
+      }
+    ]
+  }
+]

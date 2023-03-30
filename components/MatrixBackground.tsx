@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useThemeContext } from "hooks/ThemeContext";
 import { limeRGB, orangeRGB, skyBlueRGB } from "utils/constants";
+import useDebounce from "hooks/useDebounce";
+import useWindowDimensions from "hooks/useWindowDimensions";
 
 const letters =
   "ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ";
@@ -16,7 +18,12 @@ export default function MatrixBackground({
   className = "",
 }: any) {
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
+  const { height, width } = useWindowDimensions();
+  const [windowSize, setWindowSize] = useState(width);
+  const [windowHeight, setWindowHeight] = useState(height);
+  const debouncedResize = useDebounce(windowSize, 300);
+  const debouncedHeight = useDebounce(windowHeight, 300);
 
   useEffect(() => {
     let interval: any;
@@ -51,7 +58,7 @@ export default function MatrixBackground({
         for (let i = 0; i < drops.length; i++) {
           const text = letters[Math.floor(Math.random() * letters.length)];
           const alpha = fade ? 0.3 : 1;
-          const fillStyle = themeColors[selectedThemeColor](alpha);
+          const fillStyle = themeColors[themeColor](alpha);
           ctx.fillStyle = fillStyle;
           ctx.font = "bold 12px Orbitron";
           ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -66,7 +73,15 @@ export default function MatrixBackground({
     return () => {
       clearInterval(interval);
     };
-  }, [selectedThemeColor]);
+  }, [themeColor, debouncedResize, debouncedHeight]);
+
+  useEffect(() => {
+    setWindowSize(width);
+  }, [width]);
+
+  useEffect(() => {
+    setWindowHeight(height);
+  }, [height]);
 
   return (
     <canvas

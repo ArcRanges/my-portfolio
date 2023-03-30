@@ -31,11 +31,14 @@ for (const colorName in myColors) {
       if (shade in pallette) {
         colorSafeList.push(`text-${colorName}-${shade}`);
         colorSafeList.push(`bg-${colorName}-${shade}`);
+        colorSafeList.push(`from-${colorName}-${shade}`);
         colorSafeList.push(`from-${colorName}-${shade}/30`);
         colorSafeList.push(`from-${colorName}-${shade}/50`);
+        colorSafeList.push(`from-${colorName}-${shade}/70`);
         colorSafeList.push(`via-${colorName}-${shade}/30`);
         colorSafeList.push(`to-${colorName}-${shade}/30`);
         colorSafeList.push(`border-${colorName}-${shade}`);
+        colorSafeList.push(`border-${colorName}-${shade}/50`);
         colorSafeList.push(`outline-${colorName}-${shade}`);
       }
     });

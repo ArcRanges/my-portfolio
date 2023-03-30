@@ -10,7 +10,7 @@ const initialPosition = "-3.2rem";
 export default function ThemePicker() {
   const [toggled, toggle] = useReducer((prev) => !prev, false);
   const { themeState, setThemeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
   const handleSelectTheme = (theme: string) => {
     setThemeState({
@@ -37,15 +37,15 @@ export default function ThemePicker() {
       <Card className="!p-2">
         <div className="flex flex-col items-center justify-center">
           <Icon
-            color={selectedThemeColor}
+            color={themeColor}
             name={toggled ? "angle-down" : "angle-up"}
-            className={`text-4xl cursor-pointer text-${selectedThemeColor}-500`}
+            className={`text-4xl cursor-pointer text-${themeColor}-500`}
             onClick={toggle}
           />
           <div className="flex flex-row justify-between w-32">
             <div
               className={`flex items-center justify-center w-10 h-10 rounded-full border-sky-500 ${
-                selectedThemeColor === "sky" ? "border" : ""
+                themeColor === "sky" ? "border" : ""
               }`}
             >
               <button
@@ -55,7 +55,7 @@ export default function ThemePicker() {
             </div>
             <div
               className={`flex items-center justify-center w-10 h-10 border-orange-500 rounded-full ${
-                selectedThemeColor === "orange" ? "border" : ""
+                themeColor === "orange" ? "border" : ""
               }`}
             >
               <button
@@ -65,7 +65,7 @@ export default function ThemePicker() {
             </div>
             <div
               className={`flex items-center justify-center w-10 h-10 rounded-full border-lime-500 ${
-                selectedThemeColor === "lime" ? "border" : ""
+                themeColor === "lime" ? "border" : ""
               }`}
             >
               <button

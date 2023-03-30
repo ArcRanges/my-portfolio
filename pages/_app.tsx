@@ -1,42 +1,34 @@
-import "styles/globals.css";
+import "styles/animated-icons.css";
 import "styles/background-effects.css";
+import "styles/globals.css";
 
-import type { AppProps } from "next/app";
-import { useEffect, useReducer, useState } from "react";
-import AuthProvider, { authReducer, initialAuthState } from "hooks/AuthContext";
-import Login from "_pages/Login";
-import BackgroundEffects from "containers/BackgroundEffects";
 import Navbar from "components/Navbar";
 import ThemePicker from "components/ThemePicker";
+import BackgroundEffects from "containers/BackgroundEffects";
+import AppProvider, {
+  appStateReducer,
+  initialAppState,
+} from "hooks/AppContext";
 import ThemeProvider, {
   initialThemeState,
   themeReducer,
 } from "hooks/ThemeContext";
+import type { AppProps } from "next/app";
+import { useReducer } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [authState, setAuthState] = useReducer(authReducer, initialAuthState);
+  const [appState, setAppState] = useReducer(appStateReducer, initialAppState);
   const [theme, setTheme] = useReducer(themeReducer, initialThemeState);
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const _authState = localStorage.getItem("auth");
-  //     setAuthState({
-  //       type: "SET_AUTHENTICATED",
-  //       payload: JSON.parse(_authState ?? "{}"),
-  //     });
-  //   }
-  // }, []);
 
   return (
     <div className="relative">
       <ThemeProvider themeState={theme} setThemeState={setTheme}>
-        <AuthProvider authState={authState} setAuthState={setAuthState}>
+        <AppProvider appState={appState} setAppState={setAppState}>
           {/* <Navbar /> */}
           <BackgroundEffects />
-          {/* {!authState.authenticated ? <Login /> : <Component {...pageProps} />} */}
           <Component {...pageProps} />
           <ThemePicker />
-        </AuthProvider>
+        </AppProvider>
       </ThemeProvider>
     </div>
   );

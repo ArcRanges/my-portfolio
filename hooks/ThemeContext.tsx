@@ -6,8 +6,15 @@ export const THEME_COLORS = {
   orange: "orange",
 };
 
+export const THEME_COLORS_HEX = {
+  [THEME_COLORS.sky]: "#0EA5E9",
+  [THEME_COLORS.lime]: "#84CC16",
+  [THEME_COLORS.orange]: "#F97316",
+};
+
 export const initialThemeState = {
-  selectedThemeColor: THEME_COLORS.sky,
+  themeColor: THEME_COLORS.orange,
+  themeColorSecondary: THEME_COLORS.sky,
 };
 
 const ThemeContext = createContext({} as any);
@@ -38,10 +45,30 @@ export const themeReducer = (state: any, action: any) => {
   switch (action.type) {
     case themeActions.SET_THEME: {
       const colour = action.payload;
+      const themeColorHex = THEME_COLORS_HEX[colour];
+
+      switch (colour) {
+        case THEME_COLORS.sky:
+          return {
+            themeColorHex,
+            themeColor: colour,
+            themeColorSecondary: THEME_COLORS.orange,
+          };
+        case THEME_COLORS.orange:
+          return {
+            themeColorHex,
+            themeColor: colour,
+            themeColorSecondary: THEME_COLORS.sky,
+          };
+        case THEME_COLORS.lime:
+          return {
+            themeColorHex,
+            themeColor: colour,
+            themeColorSecondary: THEME_COLORS.lime,
+          };
+      }
       return {
         ...state,
-        selectedThemeColor: colour,
-        selectedThemeBgColor: colour,
       };
     }
   }

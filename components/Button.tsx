@@ -6,12 +6,13 @@ export default function Button({
   className = "",
   children,
   loading,
+  small = false,
   ...restProps
 }: any) {
   const { themeState } = useThemeContext();
-  const { selectedThemeColor } = themeState;
+  const { themeColor } = themeState;
 
-  const dynamicClass = `text-${selectedThemeColor}-500 from-${selectedThemeColor}-800/50 via-${selectedThemeColor}-700/30 to-${selectedThemeColor}-800/50 border-${selectedThemeColor}-500`;
+  const dynamicClass = `text-${themeColor}-500 from-${themeColor}-800/50 via-${themeColor}-700/30 to-${themeColor}-800/50 border-${themeColor}-500`;
 
   const loadingClass = loading ? "opacity-50" : "";
 
@@ -28,7 +29,9 @@ export default function Button({
 
   return (
     <button
-      className={`relative py-3 px-5 bg-gradient-to-t border transition-opacity duration-200 hover:opacity-50 ${loadingClass} ${dynamicClass} ${className}`}
+      className={`relative bg-gradient-to-t border transition-opacity duration-200 hover:opacity-50 ${loadingClass} ${dynamicClass} ${className} ${
+        small ? "py-1 px-3" : "py-3 px-5 "
+      }`}
       {...restProps}
       disabled={loading}
     >
