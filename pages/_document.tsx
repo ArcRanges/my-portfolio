@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <title>Arc Ranges | Portfolio</title>
         <link
           rel="stylesheet"
           href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"

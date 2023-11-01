@@ -155,3 +155,13 @@ input[type="password"] {
   height: 100%; /* set the image's height to 100% to fill the container */
   object-fit: cover; /* set the object-fit property to cover to ensure the image covers the entire container */
 }
+
+.origin-container .line-1 {
+  border: 1px dashed lightgray;
+  width: 0;
+  z-index: 20;
+  top: 42%;
+  left: 46%;
+  transform: rotate(-45deg);
+  transform-origin: 0% 50%;
+}
